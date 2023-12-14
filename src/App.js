@@ -9,17 +9,21 @@ import Login from "./Container/Common/Login/Login";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Landing />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/student" element={<StudentOutlet />}>
-          <Route path="" element={<Dashboard />}></Route>
-          <Route path="report" element={<Report/>}></Route>
-        </Route>
-        <Route path="/teacher" element={<TeacherOutlet />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <div className="root_container">
+      <div className="main">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Landing />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/student" element={<StudentOutlet />}>
+              <Route path="" element={<Dashboard />}></Route>
+              <Route path="report" element={<Report />}></Route>
+            </Route>
+            <Route path="/teacher" element={<TeacherOutlet />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </div>
   );
 }
 
