@@ -18,33 +18,52 @@ import img2 from "../imgs/img2.png";
 import img3 from "../imgs/img3.png";
 
 // Sidebar Data
-export const SidebarData = [
-  {
-    icon: UilEstate,
-    heading: "Dashboard",
-    location:""
-  },
-  {
-    icon: UilUsersAlt,
-    heading: "My Students",
-    location:"mystudent"
-  },
-  {
-    icon: UilClipboardAlt,
-    heading: "Add Question",
-    location:"addquestion"
-  },
-  {
-    icon: UilPackage,
-    heading: 'Profile',
-    location:'profile'
-  },
-  {
-    icon: UilChart,
-    heading: 'Reports',
-    location:'reports'
-  },
-];
+export const SidebarData = {
+  student: [
+    {
+      icon: UilEstate,
+      heading: "Dashboard",
+      location: "",
+    },
+    {
+      icon: UilPackage,
+      heading: "Profile",
+      location: "profile",
+    },
+    {
+      icon: UilChart,
+      heading: "Reports",
+      location: "report",
+    },
+  ],
+  teacher:[
+    {
+      icon: UilEstate,
+      heading: "Dashboard",
+      location:""
+    },
+    {
+      icon: UilUsersAlt,
+      heading: "My Students",
+      location:"mystudent"
+    },
+    {
+      icon: UilClipboardAlt,
+      heading: "Add Question",
+      location:"addquestion"
+    },
+    {
+      icon: UilPackage,
+      heading: 'Profile',
+      location:'profile'
+    },
+    {
+      icon: UilChart,
+      heading: 'Reports',
+      location:'report'
+    },
+  ]
+};
 
 // Analytics Cards Data
 export const cardsData = [

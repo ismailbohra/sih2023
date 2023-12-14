@@ -7,7 +7,7 @@ import "./StudentOutlet.css";
 function StudentOutlet() {
   return (
     <div className="AppGlass">
-      <Sidebar />
+      <Sidebar type={'student'}/>
       <div className="outlet">
         <Outlet />
       </div>

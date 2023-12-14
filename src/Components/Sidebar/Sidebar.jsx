@@ -8,7 +8,7 @@ import { SidebarData } from "../../Assets/Data/Data";
 import { UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
-const Sidebar = () => {
+const Sidebar = (prop) => {
   const [selected, setSelected] = useState(0);
 
   const [expanded, setExpaned] = useState(true)
@@ -23,7 +23,6 @@ const Sidebar = () => {
   }
 
   const navigate = useNavigate();
-  console.log(window.innerWidth)
   return (
     <>
     
@@ -45,7 +44,7 @@ const Sidebar = () => {
       <div className="menu">
   
 
-{SidebarData.map((item, index) => {
+{SidebarData[prop.type].map((item, index) => {
  
   return (
     <div
@@ -53,7 +52,7 @@ const Sidebar = () => {
       key={index}
       onClick={() => { 
         setSelected(index);
-        navigate(item.path);
+        navigate(item.location);
       }}
     >
       <item.icon />
