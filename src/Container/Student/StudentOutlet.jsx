@@ -1,10 +1,19 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Sidebar from "../../Components/Sidebar/Sidebar";
+import RightSide from "../../Components/RightSide/RightSide";
+import "./StudentOutlet.css";
 
 function StudentOutlet() {
   return (
-    <Outlet/>
-  )
+    <div className="AppGlass">
+      <Sidebar />
+      <div className="outlet">
+        <Outlet />
+      </div>
+      <RightSide />
+    </div>
+  );
 }
 
-export default StudentOutlet
+export default StudentOutlet;
