@@ -5,7 +5,7 @@ import Dashboard from "./Container/Student/Dashboard/Dashboard";
 import StudentOutlet from "./Container/Student/StudentOutlet";
 import Report from "./Container/Student/Reports/Report";
 import TeacherOutlet from "./Container/Teacher/TeacherOutlet";
-import Login from "./Container/Common/Login/login";
+import Login from "./Container/Common/Login/Login";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<Landing />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/student" element={<StudentOutlet />}>
-          <Route path="dashboard" element={<Dashboard />}></Route>
+          <Route path="" element={<Dashboard />}></Route>
           <Route path="report" element={<Report/>}></Route>
         </Route>
         <Route path="/teacher" element={<TeacherOutlet />}></Route>
