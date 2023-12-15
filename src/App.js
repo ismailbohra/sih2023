@@ -5,7 +5,7 @@ import Dashboard from "./Container/Student/Dashboard/Dashboard";
 import StudentOutlet from "./Container/Student/StudentOutlet";
 import Report from "./Container/Student/Reports/Report";
 import TeacherOutlet from "./Container/Teacher/TeacherOutlet";
-import Login from "./Container/Common/Login/Login";
+import Login from "./Container/Common/Login/login";
 import Profile from "./Container/Student/Profile/Profile";
 import AddQuestion from "./Container/Teacher/AddQuestion/AddQuestion";
 import MyStudent from "./Container/Teacher/My Students/MyStudent";
