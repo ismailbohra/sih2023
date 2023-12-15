@@ -8,8 +8,9 @@ import TeacherOutlet from "./Container/Teacher/TeacherOutlet";
 import Login from "./Container/Common/Login/login";
 import Profile from "./Container/Student/Profile/Profile";
 import AddQuestion from "./Container/Teacher/AddQuestion/AddQuestion";
-import MyStudent from "./Container/Teacher/My Students/MyStudent";
-
+import MyStudent from "./Container/Teacher/My Students/StudentList";
+import Training from "./Container/Student/Training/Training"
+import Counselling from "./Container/Student/Counselling/Counselling";
 function App() {
   return (
     <div className="root_container">
@@ -20,13 +21,20 @@ function App() {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/student" element={<StudentOutlet />}>
               <Route path="" element={<Dashboard />}></Route>
-              <Route path="profile" element={<Profile />}></Route>
+              {/* <Route path="profile" element={<Profile />}></Route> */}
               <Route path="report" element={<Report />}></Route>
+              <Route path="training" element={<Training />}></Route>
+              <Route path="counselling" element={<Counselling />}></Route>
+
             </Route>
+
+
+
             <Route path="/teacher" element={<TeacherOutlet />}>
-              <Route path="" element={<Dashboard />}></Route>
+              {/* <Route path="" element={<Dashboard />}></Route> */}
               <Route path="addquestion" element={<AddQuestion />}></Route>
-              <Route path="mystudent" element={<MyStudent />}></Route>
+              {/* <Route path="mystudent" element={<MyStudent />}></Route> */}
+              <Route path="" element={<MyStudent />}></Route>
               <Route path="profile" element={<Profile />}></Route>
               <Route path="report" element={<Report />}></Route>
             </Route>

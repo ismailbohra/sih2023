@@ -32,4 +32,5 @@
   width: 97%;
   background: var(--glass);
   border-radius: 2rem;
+  justify-content: center;
 }

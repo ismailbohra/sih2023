@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Cards from '../../../Components/Cards/Cards'
 function Report() {
   return (
-    <div>Report</div>
+   <div><Cards/></div>
   )
 }
 

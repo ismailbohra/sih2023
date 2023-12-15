@@ -1,0 +1,50 @@
+.SingleStudentContainer{
+    display: flex;
+}
+.studentinfo{
+    border: 2px solid black;
+    margin-bottom: 0.3rem;
+    margin-right:  0.1rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+.name{
+    width: 40%;
+    border-right: 2px solid black;
+    display: flex;
+    padding-left: 0.5rem;
+    height: 100%;
+    align-items: center;
+}
+.enroll{
+       /* margin: 0.5rem; */
+    /* margin-left: 0; */
+    padding-left: 0.3rem;
+    width: 55%;
+    /* border: 2px solid black; */
+    /* border-right: 2px solid black; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 0.1rem;
+    span{
+        margin-right: auto;
+    }
+}
+.studentinfo{
+    button{
+        border-radius: 5px;
+        margin: 0.1rem 0.2rem;
+        height: 95%;
+        /* border: none; */
+        background-color: #f799a354;
+        border: 1.5px solid transparent;
+    }
+    button:hover{
+        background-color: #FF919D;
+        border-color:  black;
+    }
+}

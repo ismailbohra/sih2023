@@ -1,0 +1,47 @@
+#container {
+    max-width: 550px;
+}
+
+.step-container {
+    /* position: relative;  */
+    text-align: center;
+    transform: translateY(-50%);
+    color:#e0c4ee
+}
+
+
+.step-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #e0c4ee;
+    line-height: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 10px; */
+    cursor: pointer;
+    /* Added cursor pointer */
+}
+.active {
+    color: #5e0989;
+    border: 3px solid #5e0989;
+}
+.step-line {
+    position: absolute;
+    top: 16px;
+    left: 50px;
+    width: calc(100% - 100px);
+    height: 2px;
+    z-index: -1;
+}
+.progress-bar{
+    background-color:#5e0989 !important;
+    
+}
+.progress-bar
+#multi-step-form {
+    overflow-x: hidden;
+}

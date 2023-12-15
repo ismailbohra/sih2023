@@ -26,26 +26,42 @@ export const SidebarData = {
       location: "",
     },
     {
+      icon: UilEstate,
+      heading: "Counselling",
+      location:"counselling"
+    },
+    {
       icon: UilPackage,
-      heading: "Profile",
-      location: "profile",
+      heading: "Training",
+      location:"training"
     },
     {
       icon: UilChart,
       heading: "Reports",
       location: "report",
     },
+    // {
+    //   icon:"UilUsersAlt",
+    //   heading: "Training",
+    //   location:"training"
+    // },
+    // {
+    //   icon:"UilEstate",
+    //   heading: "Counselling",
+    //   location:"counselling"
+    // },
   ],
   teacher:[
-    {
-      icon: UilEstate,
-      heading: "Dashboard",
-      location:""
-    },
+    // {
+    //   icon: UilEstate,
+    //   heading: "Dashboard",
+    //   location:""
+    // },
     {
       icon: UilUsersAlt,
       heading: "My Students",
-      location:"mystudent"
+      // location:"mystudent"
+      location:""
     },
     {
       icon: UilClipboardAlt,
