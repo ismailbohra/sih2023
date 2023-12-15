@@ -5,12 +5,13 @@ import Dashboard from "./Container/Student/Dashboard/Dashboard";
 import StudentOutlet from "./Container/Student/StudentOutlet";
 import Report from "./Container/Student/Reports/Report";
 import TeacherOutlet from "./Container/Teacher/TeacherOutlet";
-import Login from "./Container/Common/Login/login";
+import Login from "./Container/Common/Login/Login";
 import Profile from "./Container/Student/Profile/Profile";
 import AddQuestion from "./Container/Teacher/AddQuestion/AddQuestion";
 import MyStudent from "./Container/Teacher/My Students/StudentList";
 import Training from "./Container/Student/Training/Training"
 import Counselling from "./Container/Student/Counselling/Counselling";
+import StudentTest from "./Container/Student/StudentTest/MainPage";
 function App() {
   return (
     <div className="root_container">
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing />}></Route>
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/test" element={<StudentTest/>}></Route>
             <Route path="/student" element={<StudentOutlet />}>
               <Route path="" element={<Dashboard />}></Route>
               {/* <Route path="profile" element={<Profile />}></Route> */}
