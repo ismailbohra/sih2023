@@ -21,7 +21,7 @@ export default function Landing() {
               </div>
 
               <div className="mid">
-                <nav>
+                {/* <nav>
                   <ul>
                     <li>
                       <a>About</a>
@@ -36,7 +36,7 @@ export default function Landing() {
                       <a>Contact</a>
                     </li>
                   </ul>
-                </nav>
+                </nav> */}
               </div>
               <div className="right">
                 <button
@@ -63,7 +63,9 @@ export default function Landing() {
                     dicta alias modi labore accusantium itaque voluptas aut,
                     accusamus fugiat
                   </div>
-                  <button className="tbtn">Get Started</button>
+                  <button
+                    onClick={() => navigateto("login")}
+                    className="tbtn">Get Started</button>
                 </div>
               </div>
 

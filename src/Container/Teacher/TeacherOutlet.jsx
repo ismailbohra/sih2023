@@ -4,14 +4,21 @@ import Sidebar from "../../Components/Sidebar/Sidebar";
 import RightSide from "../../Components/RightSide/RightSide";
 import "./TeacherOutlet.css";
 
-function StudentOutlet() {
+function StudentOutlet({showReport,setShowReport }) {
+  window.onload = function() {
+    if(window.location.href === "http://localhost:3000/teacher/mystudent") {
+        document.body.style.overflow = "auto"; // Show scrollbar
+    } else {
+        document.body.style.overflow = "hidden"; // Hide scrollbar
+    }
+}
   return (
-    <div className="AppGlass">
+    <div className="AppGlassTeacher">
       <Sidebar type={'teacher'}/>
-      <div className="outlet">
+   <div className="outlet"> 
         <Outlet />
-      </div>
-      <RightSide />
+       </div> 
+      
     </div>
   );
 }
