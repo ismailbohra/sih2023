@@ -15,10 +15,10 @@ function AudioQuestion({ question, setanswer, answer }) {
   return (
     <>
       <Container>
-        <h2>Q. {question.question}</h2>
+        <h2>Q. {question.text}</h2>
         <div className="image">
           <audio autoPlay controls>
-            <source src={question?.audioLink} type="audio/mp3" />
+            <source src={question?.link} type="audio/mp3" />
             Your browser does not support the audio tag.
           </audio>
         </div>
@@ -26,62 +26,27 @@ function AudioQuestion({ question, setanswer, answer }) {
         <DialogContent>
           <RadioGroup
             name="q_answer"
-            value={answer[question.id]}
-            onChange={(e) => setanswer(question.id, parseInt(e.target.value))}
+            value={answer[question._id]}
+            onChange={(e) => setanswer(question._id, parseInt(e.target.value))}
           >
             <Grid container spacing={2} width={"100%"}>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Radio color="primary" />}
-                  label={question.option1}
-                  value={1}
-                  style={{
-                    backgroundColor:
-                      answer[question.id] === 1 ? "green" : "#d9534f",
-                    width: "100%",
-                    borderRadius: "10px",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Radio color="primary" />}
-                  label={question.option2}
-                  value={2}
-                  style={{
-                    backgroundColor:
-                      answer[question.id] === 2 ? "green" : "#d9534f",
-                    width: "100%",
-                    borderRadius: "10px",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Radio color="primary" />}
-                  label={question.option3}
-                  value={3}
-                  style={{
-                    backgroundColor:
-                      answer[question.id] === 3 ? "green" : "#d9534f",
-                    width: "100%",
-                    borderRadius: "10px",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Radio color="primary" />}
-                  label={question.option4}
-                  value={4}
-                  style={{
-                    backgroundColor:
-                      answer[question.id] === 4 ? "green" : "#d9534f",
-                    width: "100%",
-                    borderRadius: "10px",
-                  }}
-                />
-              </Grid>
+              {question.options &&
+                question.options.length > 0 &&
+                question.options.map((element, index) => (
+                  <Grid item xs={12} key={index}>
+                    <FormControlLabel
+                      control={<Radio color="primary" />}
+                      label={element.value}
+                      value={index}
+                      style={{
+                        backgroundColor:
+                          answer[question._id] === index ? "green" : "#d9534f",
+                        width: "100%",
+                        borderRadius: "10px",
+                      }}
+                    />
+                  </Grid>
+                ))}
             </Grid>
           </RadioGroup>
         </DialogContent>
