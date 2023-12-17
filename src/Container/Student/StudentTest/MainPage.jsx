@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MainPage.css";
-import { Box } from "@mui/material";
 import McqQuestion from "./McqQuestion";
 import ImageQuestion from "./ImageQuestion";
 import VideoQuestion from "./VideoQuestion";
 import AudioQuestion from "./AudioQuestion";
+import { Container, Dialog, DialogContent, Button, Box } from "@mui/material";
 
 const questions = [
   {
@@ -26,8 +26,8 @@ const questions = [
     imagelink:
       "https://media.istockphoto.com/id/886636648/photo/young-man-is-taking-pictures-with-an-old-camera.jpg?s=612x612&w=0&k=20&c=xhNzBup3llLNBJjj4wU6kO8gmK8xiXIbxKX6cpveUhI=",
     category: "image",
-},
-{
+  },
+  {
     id: 2,
     question: "question 3",
     option1: "option a",
@@ -43,7 +43,7 @@ const questions = [
     option2: "option b",
     option3: "option c",
     option4: "option d",
-    videoLink:'https://ajar-me.com/assets/video/Ajar_Video.mp4',
+    videoLink: "https://ajar-me.com/assets/video/Ajar_Video.mp4",
     category: "video",
   },
   {
@@ -56,6 +56,16 @@ const questions = [
     category: "audio",
   },
 ];
+// useEffect(() => {
+//   fetch("https://api.example.com/data")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log("request successful:", data);
+//     })
+//     .catch((error) => {
+//       console.error("Error during GET request:", error);
+//     });
+// }, []);
 
 function StudentTest() {
   const [answer, setAnswer] = useState({
@@ -77,20 +87,18 @@ function StudentTest() {
 
   const previousQuestion = () => {
     setCurrentQuestion((prevQuestion) => prevQuestion - 1);
-};
+  };
 
-const nextQuestion = () => {
+  const nextQuestion = () => {
     setCurrentQuestion((prevQuestion) => prevQuestion + 1);
   };
-  const submit=()=>{
+  const submit = () => {
     console.log(answer);
-  }
+  };
 
   return (
     <>
-      <div className="container-fluid">
-        <div className="modal-dialog">
-          <div className="modal-content">
+      <Container maxWidth="lg">
             {questions[currentQuestion].category === "textual" ? (
               <McqQuestion
                 question={questions[currentQuestion]}
@@ -98,7 +106,7 @@ const nextQuestion = () => {
                 setanswer={markAnswer}
               />
             ) : null}
-            
+
             {questions[currentQuestion].category === "image" ? (
               <ImageQuestion
                 question={questions[currentQuestion]}
@@ -120,41 +128,39 @@ const nextQuestion = () => {
                 setanswer={markAnswer}
               />
             ) : null}
-            
+
             <Box
               sx={{ justifyContent: "space-between" }}
               mt={5}
-              width={"100%"}
+              // width={"100%"}
               display={"flex"}
               padding={"15px"}
             >
-              <button
-                type="button"
-                className="btn btn-primary"
+              <Button
+                variant="contained"
+                color="primary"
                 onClick={previousQuestion}
-                disabled={currentQuestion - 1 == -1 ? true : false}
+                disabled={currentQuestion - 1 === -1 ? true : false}
               >
                 Previous
-              </button>
-              {
-                (questions.length-1==currentQuestion)?<><button
-                type="button"
-                className="btn btn-success"
-                onClick={submit}
-              >
-                Submit
-              </button></>:<button
-                type="button"
-                className="btn btn-primary"
-                onClick={nextQuestion}
-              >
-                Next
-              </button>
-              }
+              </Button>
+              {questions.length - 1 === currentQuestion ? (
+                <>
+                  <Button variant="contained" color="success" onClick={submit}>
+                    Submit
+                  </Button>
+                </>
+              ) : (
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={nextQuestion}
+                >
+                  Next
+                </Button>
+              )}
             </Box>
-          </div>
-        </div>
-      </div>
+      </Container>
     </>
   );
 }

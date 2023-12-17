@@ -1,87 +1,93 @@
 import React from "react";
+import {
+  DialogTitle,
+  DialogContent,
+  Button,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  Container,
+  Typography,
+  Grid,
+} from "@mui/material";
 
 function ImageQuestion({ question, setanswer, answer }) {
   return (
     <>
-      <div className="modal-header">
-        <h3>Q. {question.question}</h3>
+      <Container>
+          <h2>Q. {question.question}</h2>
         <div className="image">
-          <img src={question.imagelink} alt="image" width={'150px'} height={'150px'}/>
+          <img
+            src={question.imagelink}
+            alt="image"
+            width={"150px"}
+            height={"150px"}
+          />
         </div>
-      </div>
-      <div className="modal-body">
-        <div className="col-xs-3 5"></div>
-        <div className="quiz" id="quiz" data-toggle="buttons">
-          <label
-            className="element-animation1 btn btn-lg btn-danger btn-block"
-            style={{
-              backgroundColor: answer[question.id] == 1 ? "green" : "#d9534f",
-            }}
+        <hr />
+        <DialogContent>
+          <RadioGroup
+            name="q_answer"
+            value={answer[question.id]}
+            onChange={(e) => setanswer(question.id, parseInt(e.target.value))}
           >
-            <span className="btn-label">
-              <i className="glyphicon glyphicon-chevron-right"></i>
-            </span>{" "}
-            <input
-              type="radio"
-              name="q_answer"
-              value="1"
-              onClick={() => setanswer(question.id, 1)}
-            />
-            {question.option1}
-          </label>
-          <label
-            className="element-animation2 btn btn-lg btn-danger btn-block"
-            style={{
-              backgroundColor: answer[question.id] == 2 ? "green" : "#d9534f",
-            }}
-          >
-            <span className="btn-label">
-              <i className="glyphicon glyphicon-chevron-right"></i>
-            </span>{" "}
-            <input
-              type="radio"
-              name="q_answer"
-              value="2"
-              onClick={() => setanswer(question.id, 2)}
-            />
-            {question.option2}
-          </label>
-          <label
-            className="element-animation3 btn btn-lg btn-danger btn-block"
-            style={{
-              backgroundColor: answer[question.id] == 3 ? "green" : "#d9534f",
-            }}
-          >
-            <span className="btn-label">
-              <i className="glyphicon glyphicon-chevron-right"></i>
-            </span>{" "}
-            <input
-              type="radio"
-              name="q_answer"
-              value="3"
-              onClick={() => setanswer(question.id, 3)}
-            />
-            {question.option3}
-          </label>
-          <label
-            className="element-animation4 btn btn-lg btn-danger btn-block"
-            style={{
-              backgroundColor: answer[question.id] == 4 ? "green" : "#d9534f",
-            }}
-          >
-            <span className="btn-label">
-              <i className="glyphicon glyphicon-chevron-right"></i>
-            </span>{" "}
-            <input
-              type="radio"
-              name="q_answer"
-              value="4"
-              onClick={() => setanswer(question.id, 4)}
-            />
-            {question.option4}
-          </label>
-        </div>
-      </div>
+            <Grid container spacing={2} width={"100%"}>
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={<Radio color="primary" />}
+                  label={question.option1}
+                  value={1}
+                  style={{
+                    backgroundColor:
+                      answer[question.id] === 1 ? "green" : "#d9534f",
+                    width: "100%",
+                    borderRadius: "10px",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={<Radio color="primary" />}
+                  label={question.option2}
+                  value={2}
+                  style={{
+                    backgroundColor:
+                      answer[question.id] === 2 ? "green" : "#d9534f",
+                    width: "100%",
+                    borderRadius: "10px",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={<Radio color="primary" />}
+                  label={question.option3}
+                  value={3}
+                  style={{
+                    backgroundColor:
+                      answer[question.id] === 3 ? "green" : "#d9534f",
+                    width: "100%",
+                    borderRadius: "10px",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={<Radio color="primary" />}
+                  label={question.option4}
+                  value={4}
+                  style={{
+                    backgroundColor:
+                      answer[question.id] === 4 ? "green" : "#d9534f",
+                    width: "100%",
+                    borderRadius: "10px",
+                  }}
+                />
+              </Grid>
+            </Grid>
+          </RadioGroup>
+        </DialogContent>
+      </Container>
     </>
   );
 }
