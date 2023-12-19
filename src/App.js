@@ -14,6 +14,7 @@ import Counselling from "./Container/Student/Counselling/Counselling";
 import StudentTest from "./Container/Student/StudentTest/MainPage";
 import AddFeedback from "./Container/Teacher/AddFeedback.js/AddFeedback";
 import RegistrationPage from "./Container/Common/Registration/Regis";
+import MainPractise from "./Container/Student/Training/StudentPractice/MainPractice";
 function App() {
   return (
     <div className="root_container">
@@ -24,6 +25,7 @@ function App() {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/test" element={<StudentTest/>}></Route>
             <Route path="/register" element={<RegistrationPage/>}></Route>
+            <Route path="/training_test" element={<MainPractise/>}></Route>
             <Route path="/student" element={<StudentOutlet />}>
               <Route path="" element={<Dashboard />}></Route>
               {/* <Route path="profile" element={<Profile />}></Route> */}
