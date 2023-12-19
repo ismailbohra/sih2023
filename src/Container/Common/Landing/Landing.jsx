@@ -45,7 +45,7 @@ export default function Landing() {
                 >
                   Login
                 </button>
-                <button className="tbtn">SignUp</button>
+                <button className="tbtn" onClick={() => navigateto("register")}>SignUp</button>
               </div>
             </div>
 

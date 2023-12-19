@@ -28,12 +28,12 @@ export const SidebarData = {
     {
       icon: UilEstate,
       heading: "Counselling",
-      location:"counselling"
+      location: "counselling",
     },
     {
       icon: UilPackage,
       heading: "Training",
-      location:"training"
+      location: "training",
     },
     {
       icon: UilChart,
@@ -49,9 +49,14 @@ export const SidebarData = {
     //   icon:"UilEstate",
     //   heading: "Counselling",
     //   location:"counselling"
-    // },
+    // },,
+    {
+      icon: UilChart,
+      heading: "logout",
+      location: "/login",
+    },
   ],
-  teacher:[
+  teacher: [
     // {
     //   icon: UilEstate,
     //   heading: "Dashboard",
@@ -61,24 +66,29 @@ export const SidebarData = {
       icon: UilUsersAlt,
       heading: "My Students",
       // location:"mystudent"
-      location:""
+      location: "",
     },
     {
       icon: UilClipboardAlt,
       heading: "Add Question",
-      location:"addquestion"
+      location: "addquestion",
     },
     {
       icon: UilPackage,
-      heading: 'Profile',
-      location:'profile'
+      heading: "Profile",
+      location: "profile",
     },
     {
       icon: UilChart,
-      heading: 'Reports',
-      location:'report'
+      heading: "Reports",
+      location: "report",
     },
-  ]
+    {
+      icon: UilChart,
+      heading: "logout",
+      location: "login",
+    },
+  ],
 };
 
 // Analytics Cards Data

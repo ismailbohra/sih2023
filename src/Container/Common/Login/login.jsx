@@ -18,11 +18,41 @@ function Login() {
   };
   const navigate = useNavigate();
   const submitlogin = () => {
-    if (user.username == "student" && user.password == "12345") {
-      navigate('../student')
-    } else if (user.username == "teacher" && user.password == "12345") {
-      navigate('../teacher')
-    }
+    const postData = {
+      email: user.username,
+      password: user.password,
+    };
+    fetch("http://localhost:5000/api/v1/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postData),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Success:", data);
+        localStorage.setItem('userId',data.user._id)
+        switch (data.user.role) {
+          case 'student':
+            navigate("/student");
+            break;
+          case 'teacher':
+            navigate("/teacher");
+            break;
+        
+          default:
+            break;
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
   return (
     <div className="login_container">
@@ -54,7 +84,7 @@ function Login() {
             submitlogin();
           }}
         >
-          Success
+          Sign In
         </Button>
       </div>
     </div>

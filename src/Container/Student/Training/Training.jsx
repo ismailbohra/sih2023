@@ -1,9 +1,23 @@
 import React from 'react'
+import SingleTopic from './SingleTopic'
+import './Training.css'
 
-function Training() {
+export default function Training() {
+    
   return (
-    <div>Training</div>
+    <>
+    <h1 className='learnigLabHead'>
+        Learning Lab
+    </h1>
+    <div className='mainTraining'>
+
+    <div className="contents">
+        <SingleTopic></SingleTopic>
+    </div>
+        
+
+    </div>
+    </>
   )
 }
 
-export default Training

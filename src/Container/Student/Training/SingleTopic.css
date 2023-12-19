@@ -1,0 +1,17 @@
+.mainTopic{
+    border: 2px solid ;
+    height: 85px;
+    min-width: 40%;
+    margin-bottom: 2.5rem;
+    /* padding-top: 0rem; */
+    border-radius: 20px;
+    padding: 7px 10px;
+    text-align: center;
+    background-color: #ff919d47;
+    font-weight: bold;
+    font-size: 20px;
+}
+.mainTopic:hover{
+    background-color: #ff919d47;
+    cursor: pointer;
+}

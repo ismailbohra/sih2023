@@ -1,0 +1,18 @@
+.learnigLabHead{
+    /* position: fixed; */
+    top: 2rem;
+    text-align: center;
+    width: 100%;
+}
+.mainTraining{
+
+    padding-top: 1rem;
+    height: 80vh;
+    width: 100%;
+}
+.contents{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100%;
+}
