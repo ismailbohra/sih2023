@@ -4,6 +4,8 @@
     grid-template-rows: auto; /* Two rows of auto height */
     gap: 10px; /* Gap between grid items */
     padding: 20px; /* Padding for better visualization */
+    position: relative;
+    overflow: hidden;
 }
 .parentContainer{
   width: 100%;
