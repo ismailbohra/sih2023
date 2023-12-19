@@ -12,6 +12,7 @@ import MyStudent from "./Container/Teacher/My Students/StudentList";
 import Training from "./Container/Student/Training/Training"
 import Counselling from "./Container/Student/Counselling/Counselling";
 import StudentTest from "./Container/Student/StudentTest/MainPage";
+import AddFeedback from "./Container/Teacher/AddFeedback.js/AddFeedback";
 function App() {
   return (
     <div className="root_container">
@@ -35,7 +36,7 @@ function App() {
             <Route path="/teacher" element={<TeacherOutlet />}>
               {/* <Route path="" element={<Dashboard />}></Route> */}
               <Route path="addquestion" element={<AddQuestion />}></Route>
-              {/* <Route path="mystudent" element={<MyStudent />}></Route> */}
+              <Route path="addfeedback" element={<AddFeedback />}></Route>
               <Route path="" element={<MyStudent />}></Route>
               <Route path="profile" element={<Profile />}></Route>
               <Route path="report" element={<Report />}></Route>

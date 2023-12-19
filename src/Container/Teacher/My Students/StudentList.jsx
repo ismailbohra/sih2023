@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import SingleStudent from './StudentInfo/SingleStudent/SingleStudent' // make sure to import SingleStudent
 import Report from './StudentInfo/Report/Report'
 import './StudentList.css'
+import { useNavigate } from 'react-router-dom';
 
 function MyStudent() {
   const [showReport,setShowReport] = useState(false);
@@ -89,6 +90,10 @@ function MyStudent() {
     }
     
   ]
+  const navigate=useNavigate()
+  const navigateto =()=>{
+    navigate('/teacher/addfeedback')
+  }
 
   return (
     <>
@@ -100,7 +105,9 @@ function MyStudent() {
         <SingleStudent className="Heading first-student" name={"NAME"} enroll={"Enrollment Number"} showReport={false} setShowReport={false}></SingleStudent>
 
       {Sdata.map((student, index) => (
-        <SingleStudent key={index} name={student.name} enroll={student.enroll} showReport={showReport} setShowReport={setShowReport} />
+        <div onClick={()=>navigateto()}>
+          <SingleStudent key={index} name={student.name} enroll={student.enroll} showReport={showReport} setShowReport={setShowReport} />
+        </div>
         ))}
         
         </div>
