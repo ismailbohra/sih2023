@@ -5,9 +5,9 @@
     gap: 10px; /* Gap between grid items */
     padding: 20px; /* Padding for better visualization */
 }
-/* .parentContainer{
+.parentContainer{
   width: 100%;
-} */
+}
 
 /* @media screen and (max-width: 1200px) {
   .Cards{

@@ -10,7 +10,7 @@ function AddFeedback() {
   const [answer, setAnswer] = useState({});
 
   useEffect(() => {
-    fetch(`http://172.172.170.251:5000/api/v1/faculty/getquestion`)
+    fetch(`http://localhost:5000/api/v1/faculty/getquestion`)
       .then((response) => response.json())
       .then((resp) => {
         setquestions(resp.data);
@@ -54,7 +54,7 @@ function AddFeedback() {
     }
     console.log(answer)
     
-    fetch('http://172.172.170.251:5000/api/v1/faculty/insertTestResponse', {
+    fetch('http://localhost:5000/api/v1/faculty/insertTestResponse', {
       method: "POST",
       headers: {
         "Content-Type": "application/json", 

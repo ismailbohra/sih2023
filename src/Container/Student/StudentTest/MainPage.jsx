@@ -5,6 +5,7 @@ import ImageQuestion from "./ImageQuestion";
 import "./MainPage.css";
 import McqQuestion from "./McqQuestion";
 import VideoQuestion from "./VideoQuestion";
+import { useNavigate } from "react-router-dom";
 
 
 function StudentTest() {
@@ -12,7 +13,7 @@ function StudentTest() {
   const [answer, setAnswer] = useState({});
 
   useEffect(() => {
-    fetch(`http://172.172.170.251:5000/api/v1/test/getquestion`)
+    fetch(`http://localhost:5000/api/v1/test/getquestion`)
       .then((response) => response.json())
       .then((resp) => {
         setquestions(resp.data);
@@ -47,6 +48,7 @@ function StudentTest() {
   const nextQuestion = () => {
     setCurrentQuestion((prevQuestion) => prevQuestion + 1);
   };
+  const navigate=useNavigate()
   const submit = () => {
     let tempanswer = [];
     for( const key in answer){
@@ -59,7 +61,7 @@ function StudentTest() {
       userId:localStorage.getItem('userId')|| '656c99945f8f9d21d69c548c',
       answer:tempanswer
     }
-    fetch('http://172.172.170.251:5000/api/v1/test/insertTestResponse', {
+    fetch('http://localhost:5000/api/v1/test/insertTestResponse', {
       method: "POST",
       headers: {
         "Content-Type": "application/json", 
@@ -74,6 +76,7 @@ function StudentTest() {
       })
       .then((data) => {
         console.log("Success:", data);
+        navigate('/student/report')
       })
       .catch((error) => {
         console.error("Error:", error);

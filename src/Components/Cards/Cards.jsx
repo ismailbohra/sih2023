@@ -15,7 +15,7 @@ const Cards = () => {
         const response = await axios.get(`http://localhost:5000/api/v1/user/user-details/${id}`);
         const apiData = response.data.performanceMetrics;
   
-        console.log(apiData)
+        console.log('apiData',apiData)
         const updatedCardData = apiData.map(metric => ({
           title: metric.title,
           color: metric.color,
@@ -24,8 +24,8 @@ const Cards = () => {
           png: "UilUsdSquare", // This can be updated as per your requirement
           series:metric.series,
         }));
-  
         setCardData(updatedCardData);
+        // setCardData(cardData)
         console.log(response);
       } catch (error) {
         console.log(error);

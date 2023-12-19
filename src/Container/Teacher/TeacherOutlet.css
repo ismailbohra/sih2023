@@ -8,7 +8,7 @@
 
 }
 .outlet {
-  margin-top: 7rem;
+  /* margin-top: 7rem; */
   padding-inline: 1rem;
   /* overflow-y: scroll; */
   /* width: 60vw; */
@@ -16,5 +16,5 @@
   /* scrollbar{
     display: none;
   } */
-  overflow-y: scroll;
+  overflow-y: auto;
 }
