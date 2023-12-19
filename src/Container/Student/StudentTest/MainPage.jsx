@@ -62,23 +62,24 @@ function StudentTest() {
   const [answer, setAnswer] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/v1/test/getquestion`)
+    fetch(`http://172.172.170.251:5000/api/v1/test/getquestion`)
       .then((response) => response.json())
       .then((resp) => {
-        console.log("request successful:", resp.data);
-        setquestions(resp.data)
-        resp.data.map(e=>{
-          setAnswer(prev=>({
+        setquestions(resp.data);
+        resp.data.map((e) => {
+          setAnswer((prev) => ({
             ...prev,
-            [e._id]:-1
-          }))
-        })
-        console.log(answer)
+            [e._id]: -1,
+          }));
+        });
       })
       .catch((error) => {
         console.error("Error during GET request:", error);
       });
+    console.log("useeffect");
   }, []);
+  // console.log('questions',questions)
+  // console.log('answer',answer)
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
@@ -97,7 +98,36 @@ function StudentTest() {
     setCurrentQuestion((prevQuestion) => prevQuestion + 1);
   };
   const submit = () => {
-    console.log(answer);
+    let tempanswer = [];
+    for( const key in answer){
+      tempanswer.push({
+        question_id:key,
+        response:answer[key]
+      })
+    }
+    const postData={
+      userId:localStorage.getItem('userId')|| '656c99945f8f9d21d69c548c',
+      answer:tempanswer
+    }
+    fetch('http://172.172.170.251:5000/api/v1/test/insertTestResponse', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", 
+      },
+      body: JSON.stringify(postData), 
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json(); 
+      })
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   return (
