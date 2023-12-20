@@ -4,13 +4,14 @@ import McqQuestion from "./McqQuestion";
 import ImageQuestion from "./ImageQuestion";
 import VideoQuestion from "./VideoQuestion";
 import AudioQuestion from "./AudioQuestion";
-import { Container, Button, Box } from "@mui/material";
+import { Container, Button, Box, useIsFocusVisible } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 function StudentTest() {
   const [questions, setquestions] = useState([]);
   const [answer, setAnswer] = useState({});
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [timer, settimer] = useState([])
 
   useEffect(() => {
     fetch(`http://172.172.170.251:5000/api/v1/test/getquestion`)
@@ -21,6 +22,10 @@ function StudentTest() {
           setAnswer((prev) => ({
             ...prev,
             [e._id]: -1,
+          }));
+          settimer((prev) => ({
+            ...prev,
+            [e._id]: 0,
           }));
         });
       })
@@ -73,7 +78,7 @@ function StudentTest() {
       })
       .then((data) => {
         console.log("Success:", data);
-        navigate('student/report')
+        navigate('/student/report')
         
       })
       .catch((error) => {

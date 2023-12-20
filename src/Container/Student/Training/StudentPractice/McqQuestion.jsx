@@ -16,14 +16,14 @@ function McqQuestion({ question, setanswer, answer }) {
     <>
       <Container>
         <DialogTitle>
-          <h2>Q. {question.text}</h2>
+          <h2>Q. {question.question}</h2>
         </DialogTitle>
         <hr />
         <DialogContent>
           <RadioGroup
             name="q_answer"
-            value={answer[question._id]}
-            onChange={(e) => setanswer(question._id, parseInt(e.target.value))}
+            value={answer[question.id]}
+            onChange={(e) => setanswer(question.id, parseInt(e.target.value))}
           >
             <Grid container spacing={2} width={"100%"}>
               {question.options &&
@@ -32,11 +32,11 @@ function McqQuestion({ question, setanswer, answer }) {
                   <Grid item xs={12} key={index}>
                     <FormControlLabel
                       control={<Radio color="primary" />}
-                      label={element.value}
+                      label={element}
                       value={index}
                       style={{
                         backgroundColor:
-                          answer[question._id] === index ? "green" : "#d9534f",
+                          answer[question.id] === index ? "green" : "#d9534f",
                         width: "100%",
                         borderRadius: "10px",
                       }}

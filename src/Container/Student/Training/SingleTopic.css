@@ -10,6 +10,9 @@
     background-color: #ff919d47;
     font-weight: bold;
     font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .mainTopic:hover{
     background-color: #ff919d47;

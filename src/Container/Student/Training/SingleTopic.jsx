@@ -13,7 +13,12 @@ export default function SingleTopic() {
     {
       title: "Reasoning",
       link: "/training_test",
-      category: "Logical",
+      category: "Reasoning",
+    },
+    {
+      title: "Communication Skills",
+      link: "/training_test",
+      category: "Communication grammer",
     },
     {
       title: "Mathematical Analysis",
@@ -26,14 +31,9 @@ export default function SingleTopic() {
       category: "Logical",
     },
     {
-      title: "Listening Skills",
-      link: "/training_test",
-      category: "Communication",
-    },
-    {
       title: "Attention Test",
       link: "/training_test",
-      category: "Miscellaneous",
+      category: "Attention",
     },
   ];
 

@@ -47,7 +47,7 @@
   
 }
 .StudentListHeading{
-    position: fixed;
+    /* position: fixed; */
     top: 2rem;
 }
 .first-student .feedback,

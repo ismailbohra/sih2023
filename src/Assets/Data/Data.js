@@ -70,18 +70,13 @@ export const SidebarData = {
     },
     {
       icon: UilClipboardAlt,
-      heading: "Add Question",
-      location: "addquestion",
+      heading: "Add Student",
+      location: "addStudent",
     },
     {
       icon: UilPackage,
       heading: "Profile",
       location: "profile",
-    },
-    {
-      icon: UilChart,
-      heading: "Reports",
-      location: "report",
     },
     {
       icon: UilChart,

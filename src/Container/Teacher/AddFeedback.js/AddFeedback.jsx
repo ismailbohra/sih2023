@@ -2,12 +2,13 @@ import { Box, Button, Container } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "./MainPage.css";
 import McqQuestion from "./McqQuestion";
-import { useNavigate } from "react-router-dom";
-
+import { useLocation, useNavigate } from "react-router-dom";
 
 function AddFeedback() {
   const [questions, setquestions] = useState([]);
   const [answer, setAnswer] = useState({});
+  const { state } = useLocation();
+  const student_id = state?.student_id;
 
   useEffect(() => {
     fetch(`http://localhost:5000/api/v1/faculty/getquestion`)
@@ -38,7 +39,7 @@ function AddFeedback() {
     }));
   };
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const previousQuestion = () => {
     setCurrentQuestion((prevQuestion) => prevQuestion - 1);
   };
@@ -47,46 +48,45 @@ function AddFeedback() {
     setCurrentQuestion((prevQuestion) => prevQuestion + 1);
   };
   const submit = () => {
+    let temp_id = student_id || "656c99945f8f9d21d69c548c";
+    const postData = {
+      answer: answer,
+      userId: temp_id,
+    };
+    console.log(answer);
 
-    const postData={
-        answer:answer,
-        userId:"656c99945f8f9d21d69c548c"
-    }
-    console.log(answer)
-    
-    fetch('http://localhost:5000/api/v1/faculty/insertTestResponse', {
+    fetch("http://localhost:5000/api/v1/faculty/insertTestResponse", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json", 
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(postData), 
+      body: JSON.stringify(postData),
     })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        return response.json(); 
+        return response.json();
       })
       .then((data) => {
         console.log("Success:", data);
-        navigate('/teacher/report')
+        navigate("/teacher/report");
       })
       .catch((error) => {
         console.error("Error:", error);
       });
     // console.log(answer)
-
   };
 
   return (
     <>
       {questions && questions.length > 0 && (
         <Container maxWidth="lg">
-            <McqQuestion
-              question={questions[currentQuestion]}
-              answer={answer}
-              setanswer={markAnswer}
-            />
+          <McqQuestion
+            question={questions[currentQuestion]}
+            answer={answer}
+            setanswer={markAnswer}
+          />
 
           <Box
             sx={{ justifyContent: "space-between" }}
