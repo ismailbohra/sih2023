@@ -81,7 +81,7 @@ export const SidebarData = {
     {
       icon: UilChart,
       heading: "logout",
-      location: "login",
+      location: "/login",
     },
   ],
 };

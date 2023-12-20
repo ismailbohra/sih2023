@@ -5,13 +5,16 @@ import ImageQuestion from "./ImageQuestion";
 import "./MainPage.css";
 import McqQuestion from "./McqQuestion";
 import VideoQuestion from "./VideoQuestion";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 function MainPractise() {
   const [questions, setquestions] = useState([]);
   const [answer, setAnswer] = useState({});
   const { state } = useLocation();
   const category = state?.category;
+  const [showScore, setshowScore] = useState(false);
+  const [showloader, setShowloader] = useState(true);
+  const [totalscore, settotalscore] = useState(null);
 
   useEffect(() => {
     const postData = {
@@ -27,6 +30,7 @@ function MainPractise() {
       .then((response) => response.json())
       .then((resp) => {
         setquestions(resp.data);
+        setShowloader(false);
         resp.data.map((e, index) => {
           setAnswer((prev) => ({
             ...prev,
@@ -56,15 +60,13 @@ function MainPractise() {
   const nextQuestion = () => {
     setCurrentQuestion((prevQuestion) => prevQuestion + 1);
   };
-  const [showScore, setshowScore] = useState(false);
-  const [totalscore, settotalscore] = useState(null);
   const submit = () => {
     let total = 0;
     let index = 0;
     for (const key in answer) {
       let tempquest = questions.find((e) => e.id == key);
-      console.log(tempquest)
-      console.log(answer,key)
+      console.log(tempquest);
+      console.log(answer, key);
       if (tempquest.correctOptionIndex == answer[key]) {
         total += 1;
       }
@@ -73,10 +75,31 @@ function MainPractise() {
     settotalscore(total);
     setshowScore(true);
   };
+  const navigate = useNavigate();
   return (
     <>
+      {showloader && (
+        <div className="fullloaderheight">
+          <div class="loader"></div>
+          <h2>We Are Preparing Questions For You</h2>
+        </div>
+      )}
       {showScore ? (
-        <div>{totalscore}</div>
+        <div className="fullloaderheight">
+          <div className="scorecard">
+            <p>Your Score is</p>
+            <div>{totalscore} / 5 </div>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() =>
+                navigate("/training_test", { state: { category: category } })
+              }
+            >
+              Previous
+            </Button>
+          </div>
+        </div>
       ) : (
         questions &&
         questions.length > 0 && (

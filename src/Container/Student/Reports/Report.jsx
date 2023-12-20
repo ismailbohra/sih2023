@@ -43,9 +43,9 @@ function Report() {
         </div>
       ) : (
         <>
-          <div className="MainDash">
-            <h5>Your Teacher Feedback is pending</h5>
-            <Cards cardData={cardData} />
+          <div className="Notify">
+            <h5>Your Teacher Feedback is pending.</h5>
+            {/* <Cards cardData={cardData} /> */}
           </div>
         </>
       )}

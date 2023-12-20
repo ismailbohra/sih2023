@@ -1,0 +1,40 @@
+.parentConatain{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.MainContain{
+    /* background-color: #f6e2ff; */
+    /* color: #622a95; */
+    /* position: fixed; */
+    /* top: 1rem; */
+
+    padding: 20px;
+    margin: auto;
+    border-radius: 20px;
+    /* background-color: linear-gradient(right to left, #C484F3 0%, #BB67FF 100%); */
+    /* background: linear-gradient(to left, #C484F3 , #F8D49A); */
+    background: linear-gradient(to left, rgba(255, 251, 209, 0.5), rgba(244, 229, 255, 0.5));
+
+
+
+}
+.desc_content{
+    text-align: left;
+    /* border: 2px solid green; */
+    padding: 5px 10px;
+    /* background-color: #f6e2ff; */
+    border-radius: 8px;
+    /* color: #622a95; */
+    /* height: 80vh; */
+    font-size: medium;
+}
+.Testbtn{
+    border-radius: 5px;
+}
+
+.color_dash{
+    color: var(--pink)
+}

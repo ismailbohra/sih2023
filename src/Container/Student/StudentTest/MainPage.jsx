@@ -11,7 +11,7 @@ function StudentTest() {
   const [questions, setquestions] = useState([]);
   const [answer, setAnswer] = useState({});
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [timer, settimer] = useState([])
+  const [timer, settimer] = useState([]);
 
   useEffect(() => {
     fetch(`http://172.172.170.251:5000/api/v1/test/getquestion`)
@@ -40,18 +40,19 @@ function StudentTest() {
       [question_id]: value,
     }));
   };
+  const [disablesubmit, setdisablesubmit] = useState(false);
 
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const previousQuestion = () => {
     setCurrentQuestion((prevQuestion) => prevQuestion - 1);
   };
 
   const nextQuestion = () => {
-    
     setCurrentQuestion((prevQuestion) => prevQuestion + 1);
   };
 
   const submit = () => {
+    setdisablesubmit(true);
     let tempanswer = [];
     for (const key in answer) {
       tempanswer.push({
@@ -79,8 +80,7 @@ function StudentTest() {
       })
       .then((data) => {
         console.log("Success:", data);
-        navigate('/student/report')
-        
+        navigate("/student/report");
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -131,12 +131,17 @@ function StudentTest() {
               variant="contained"
               color="primary"
               onClick={previousQuestion}
-              disabled={currentQuestion - 1 === -1 }
+              disabled={currentQuestion - 1 === -1}
             >
               Previous
             </Button>
             {questions.length - 1 === currentQuestion ? (
-              <Button variant="contained" color="success" onClick={submit}>
+              <Button
+                variant="contained"
+                color="success"
+                disabled={disablesubmit}
+                onClick={submit}
+              >
                 Submit
               </Button>
             ) : (

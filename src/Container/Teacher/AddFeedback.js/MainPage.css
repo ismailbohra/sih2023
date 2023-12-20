@@ -147,3 +147,9 @@ label .glyphicon {
     align-items: center;
     margin: 2rem;
 }
+.css-j204z7-MuiFormControlLabel-root{
+  background-color: #b9b9a54a !important;
+}
+.css-j204z7-MuiFormControlLabel-root:hover{
+  background-color: rgb(241 228 162) !important;
+}

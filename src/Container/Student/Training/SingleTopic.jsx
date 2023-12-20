@@ -38,7 +38,6 @@ export default function SingleTopic() {
   ];
 
   const handleTopicClick = (data) => {
-    // Use the navigate function with the state object
     navigate(data.link, { state: { category: data.category } });
   };
 
