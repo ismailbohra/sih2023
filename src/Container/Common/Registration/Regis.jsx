@@ -29,7 +29,7 @@ const RegistrationPage = () => {
       role: formData.selectedOption,
       username: formData.username,
     };
-    fetch("http://localhost:5000/api/v1/user/register", {
+    fetch("http://172.172.170.251:5000/api/v1/user/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

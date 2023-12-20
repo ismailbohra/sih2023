@@ -10,7 +10,7 @@ function MyStudent() {
   
   const [student, setstudent] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/api/v1/faculty/getstudent`)
+    fetch(`http://172.172.170.251:5000/api/v1/faculty/getstudent`)
       .then((response) => response.json())
       .then((resp) => {
         setstudent(resp.data);

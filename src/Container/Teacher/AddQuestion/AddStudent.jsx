@@ -15,7 +15,6 @@ const AddStudent = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,10 +22,10 @@ const AddStudent = () => {
     const postData = {
       email: formData.email,
       password: formData.password,
-      role: 'student',
+      role: "student",
       username: formData.username,
     };
-    fetch("http://localhost:5000/api/v1/user/register", {
+    fetch("http://172.172.170.251:5000/api/v1/user/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,6 +40,12 @@ const AddStudent = () => {
       })
       .then((data) => {
         navigate("/teacher/addstudent");
+        setFormData({
+          username: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        });
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -48,63 +53,63 @@ const AddStudent = () => {
   };
 
   return (
-    <div className="registration-container">
-      <h2 className="res_head">Registration</h2>
-      <form onSubmit={handleSubmit} className="registration-form">
-        <div className="form-group">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-          />
-        </div>
+    <div className="main_container">
+      <div className="registration-container">
+        <h2 className="res_head">Add Student</h2>
+        <form onSubmit={handleSubmit} className="registration-form">
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        {/* ... */}
+          {/* ... */}
 
-        
-
-        {/* Submit button */}
-        <button className="submit-btn" type="submit">
-          Register
-        </button>
-      </form>
+          {/* Submit button */}
+          <button className="submit-btn" type="submit">
+            Add
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

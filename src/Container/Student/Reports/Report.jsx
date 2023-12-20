@@ -11,7 +11,7 @@ function Report() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/v1/user/user-details/${id}`
+          `http://172.172.170.251:5000/api/v1/user/user-details/${id}`
         );
         const apiData = response.data.performanceMetrics;
         setfaculty(response.data.facultyFeedback);

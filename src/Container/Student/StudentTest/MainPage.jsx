@@ -47,6 +47,7 @@ function StudentTest() {
   };
 
   const nextQuestion = () => {
+    
     setCurrentQuestion((prevQuestion) => prevQuestion + 1);
   };
 
