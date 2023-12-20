@@ -8,6 +8,7 @@ export default (props) => {
   const [showModal, setShowmodal] = useState(false);
 
   const [user, setuser] = useState({});
+  const [final, setfinal] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,6 +17,11 @@ export default (props) => {
           `http://172.172.170.251:5000/api/v1/user/user-details/${id}`
         );
         setuser(response.data.userdata);
+        if (response.data.finalvalue) {
+          
+        }
+        setfinal(response.data.finalvalue);
+        
       } catch (error) {
         console.log(error);
       }
@@ -23,6 +29,7 @@ export default (props) => {
 
     fetchData();
   }, []);
+  console.log(user);
   const collapseModal2 = () => {
     setShowmodal(false);
   };
@@ -50,6 +57,8 @@ export default (props) => {
             <div className="text1">
               <p className="job_title">{user.username}</p>
               <p className="job_title">{user.email}</p>
+              <p className="job_title">{user.email}</p>
+              <p className="job_title">Organization</p>
             </div>
             {/* <div className="level">
        
@@ -57,15 +66,12 @@ export default (props) => {
         <p>Age</p>
       </div> */}
             <div className="text">
-              <p>className:</p>
-              <p>Institute:</p>
-              <p>Parent name:</p>
               <p>Teacher assigned:</p>
-              <p className="job_title">Organization</p>
-              <p className="job_discription">
+              <p className="job_title">{final}</p>
+              {/* <p className="job_discription">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
                 atque, ipsam a amet laboriosam eligendi.
-              </p>
+              </p> */}
             </div>
             <div className="icons">
               <button>

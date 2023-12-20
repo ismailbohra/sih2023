@@ -60,7 +60,9 @@
 
 /* ExpandedCard */
 .ExpandedCard {
-  position: absolute;
+  position: fixed;
+  top: 2rem;
+  left: 25rem;
   width: 60%;
   height: 70vh;
   z-index: 9;
