@@ -1,6 +1,6 @@
 [
   {
-    "question": "Which shape suits the given image?",
+    "text": "Which shape suits the given image?",
     "category": "attentionspan",
     "type": "image",
     "options": [
@@ -24,7 +24,7 @@
     "link": "imagecock.jpg"
   },
   {
-    "question": "Who is this cartoon ?",
+    "text": "Who is this cartoon ?",
     "category": "attentionspan",
     "type": "image",
     "options": [
@@ -48,7 +48,7 @@
     "link": "pic2.jpg"
   },
   {
-    "question": "Which fruit is this ?",
+    "text": "Which fruit is this ?",
     "category": "attentionspan",
     "type": "image",
     "options": [
@@ -72,7 +72,7 @@
     "link": "Firts.jpg"
   },
   {
-    "question": "Whta is the colour of this ball ?",
+    "text": "Whta is the colour of this ball ?",
     "category": "attentionspan",
     "type": "image",
     "options": [
@@ -96,7 +96,7 @@
     "link": "ball.jpg"
   },
   {
-    "question": "Guess the emotion of this girl ?",
+    "text": "Guess the emotion of this girl ?",
     "category": "attentionspan",
     "type": "image",
     "options": [
@@ -120,7 +120,7 @@
     "link": "girl.jpg"
   },
   {
-    "question": "Which shape suits the given image?",
+    "text": "Which shape suits the given image?",
     "category": "attentionspan",
     "type": "image",
     "options": [
@@ -144,7 +144,7 @@
     "link": "imagecock.jpg"
   },
   {
-    "question": "Who is this cartoon ?",
+    "text": "Who is this cartoon ?",
     "category": "attentionspan",
     "type": "image",
     "options": [
@@ -168,7 +168,7 @@
     "link": "pic2.jpg"
   },
   {
-    "question": "Which fruit is this ?",
+    "text": "Which fruit is this ?",
     "category": "attentionspan",
     "type": "image",
     "options": [
@@ -192,7 +192,7 @@
     "link": "Firts.jpg"
   },
   {
-    "question": "Whta is the colour of this ball ?",
+    "text": "Whta is the colour of this ball ?",
     "category": "attentionspan",
     "type": "image",
     "options": [
@@ -216,7 +216,7 @@
     "link": "ball.jpg"
   },
   {
-    "question": "Guess the emotion of this girl ?",
+    "text": "Guess the emotion of this girl ?",
     "category": "attentionspan",
     "type": "image",
     "options": [

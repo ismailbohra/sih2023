@@ -15,10 +15,10 @@ function ImageQuestion({ question, setanswer, answer }) {
   return (
     <>
       <Container>
-          <h2>Q. {question.text}</h2>
+        <h2>Q. {question.text}</h2>
         <div className="image">
           <img
-            src={question.link}
+            src={`/assets/${question.link}`}
             alt="image"
             width={"150px"}
             height={"150px"}

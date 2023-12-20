@@ -104,11 +104,34 @@ function MainPractise() {
         questions &&
         questions.length > 0 && (
           <Container maxWidth="lg">
-            <McqQuestion
-              question={questions[currentQuestion]}
-              answer={answer}
-              setanswer={markAnswer}
-            />
+            {questions[currentQuestion].type == "textual" ? (
+              <McqQuestion
+                question={questions[currentQuestion]}
+                answer={answer}
+                setanswer={markAnswer}
+              />
+            ) : null}
+            {questions[currentQuestion].type == "video" ? (
+              <VideoQuestion
+                question={questions[currentQuestion]}
+                answer={answer}
+                setanswer={markAnswer}
+              />
+            ) : null}
+            {questions[currentQuestion].type == "audio" ? (
+              <AudioQuestion
+                question={questions[currentQuestion]}
+                answer={answer}
+                setanswer={markAnswer}
+              />
+            ) : null}
+            {questions[currentQuestion].type == "image" ? (
+              <ImageQuestion
+                question={questions[currentQuestion]}
+                answer={answer}
+                setanswer={markAnswer}
+              />
+            ) : null}
 
             <Box
               sx={{ justifyContent: "space-between" }}
