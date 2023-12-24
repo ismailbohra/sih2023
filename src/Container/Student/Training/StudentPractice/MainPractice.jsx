@@ -20,7 +20,7 @@ function MainPractise() {
     const postData = {
       subject: category,
     };
-    fetch("http://172.172.170.251:5000/api/v1/training/getquestion", {
+    fetch("http://localhost:5000/api/v1/training/getquestion", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -29,6 +29,7 @@ function MainPractise() {
     })
       .then((response) => response.json())
       .then((resp) => {
+        console.log(resp.data);
         setquestions(resp.data);
         setShowloader(false);
         resp.data.map((e, index) => {
@@ -92,11 +93,12 @@ function MainPractise() {
             <Button
               variant="contained"
               color="primary"
+              sx={{"margin-top":"5px"}}
               onClick={() =>
-                navigate("/training_test", { state: { category: category } })
+                navigate("/student")
               }
             >
-              Previous
+              Exit
             </Button>
           </div>
         </div>
@@ -104,35 +106,12 @@ function MainPractise() {
         questions &&
         questions.length > 0 && (
           <Container maxWidth="lg">
-            {questions[currentQuestion].type == "textual" ? (
-              <McqQuestion
-                question={questions[currentQuestion]}
-                answer={answer}
-                setanswer={markAnswer}
-              />
-            ) : null}
-            {questions[currentQuestion].type == "video" ? (
-              <VideoQuestion
-                question={questions[currentQuestion]}
-                answer={answer}
-                setanswer={markAnswer}
-              />
-            ) : null}
-            {questions[currentQuestion].type == "audio" ? (
-              <AudioQuestion
-                question={questions[currentQuestion]}
-                answer={answer}
-                setanswer={markAnswer}
-              />
-            ) : null}
-            {questions[currentQuestion].type == "image" ? (
-              <ImageQuestion
-                question={questions[currentQuestion]}
-                answer={answer}
-                setanswer={markAnswer}
-              />
-            ) : null}
-
+            <McqQuestion
+              question={questions[currentQuestion]}
+              answer={answer}
+              setanswer={markAnswer}
+            />
+            
             <Box
               sx={{ justifyContent: "space-between" }}
               mt={5}

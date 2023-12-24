@@ -25,11 +25,11 @@ export const SidebarData = {
       heading: "Dashboard",
       location: "",
     },
-    {
-      icon: UilEstate,
-      heading: "Counselling",
-      location: "counselling",
-    },
+    // {
+    //   icon: UilEstate,
+    //   heading: "Counselling",
+    //   location: "counselling",
+    // },
     {
       icon: UilPackage,
       heading: "Training",

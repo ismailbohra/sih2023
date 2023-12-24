@@ -1,242 +1,166 @@
 [
-  {
-    "text": "Which shape suits the given image?",
-    "category": "attentionspan",
-    "type": "image",
+    {
+      "category": "mathematics",
+      "text": "Look at the image",
+      "type": "image",
+      "options": [
+        {
+          "value": "8",
+          "weight": 1
+        },
+        {
+          "value": "3",
+          "weight": 0
+        },
+        {
+          "value": "9",
+          "weight": 0
+        },
+        {
+          "value": "6",
+          "weight": 0
+        }
+      ],
+      "link": "Mathematics 1.png"
+    },
+    
+    {
+      "category": "mathematics",
+      "text": "Look at the image",
+      "type": "image",
+      "options": [
+        {
+          "value": "40",
+          "weight": 2
+        },
+        {
+          "value": "20",
+          "weight": 1
+        },
+        {
+          "value": "10",
+          "weight": 0
+        },
+        {
+          "value": "90",
+          "weight": 0
+        }
+      ],
+      "link":"Mathematics2.png"
+    },
+    {
+      "category": "communication",
+      "text": "What girl is doing in a image?",
+      "type": "image",
+      "options": [
+       
+        {
+          "value": "Eating food",
+          "weight": 0
+        },
+        {
+          "value": "Operating phone",
+          "weight": 2
+        },
+        {
+          "value": "Dancing",
+          "weight": 0
+        }
+      ],
+      "link":"Communication.jpeg"
+    },
+    
+    {
+      "category": "communication",
+      "text": "Listen audio",
+      "type": "audio",
+      "options": [
+       
+        {
+          "value": "Hey I'm Jemmy",
+          "weight": 2
+        },
+        {
+          "value": "Hey I'm a Jemmy",
+          "weight": 1
+        },
+        {
+          "value": "Hey I am Jemmy",
+          "weight": 0
+        }
+      ],
+      "link":"Communication.mp3"
+    },
+    
+    {
+    "category": "communication",
+    "text": "Listen audio",
+    "type": "audio",
     "options": [
+     
       {
-        "value": "a",
-        "weight": 0
+        "value": " Seeing you, love.",
+        "weight": 2
       },
       {
-        "value": "b",
-        "weight": 0
-      },
-      {
-        "value": "c",
-        "weight": 0
-      },
-      {
-        "value": "d",
-        "weight": 1
-      }
-    ],
-    "link": "imagecock.jpg"
-  },
-  {
-    "text": "Who is this cartoon ?",
-    "category": "attentionspan",
-    "type": "image",
-    "options": [
-      {
-        "value": "Snowman",
-        "weight": 1
-      },
-      {
-        "value": "Bheem",
-        "weight": 0
-      },
-      {
-        "value": "Oggy",
-        "weight": 0
-      },
-      {
-        "value": "Sinchan",
-        "weight": 0
-      }
-    ],
-    "link": "pic2.jpg"
-  },
-  {
-    "text": "Which fruit is this ?",
-    "category": "attentionspan",
-    "type": "image",
-    "options": [
-      {
-        "value": "Banana",
-        "weight": 1
-      },
-      {
-        "value": "Apple",
-        "weight": 0
-      },
-      {
-        "value": "Tomato",
-        "weight": 0
-      },
-      {
-        "value": "Kiwi",
-        "weight": 0
-      }
-    ],
-    "link": "Firts.jpg"
-  },
-  {
-    "text": "Whta is the colour of this ball ?",
-    "category": "attentionspan",
-    "type": "image",
-    "options": [
-      {
-        "value": "Red",
-        "weight": 0
-      },
-      {
-        "value": "Blue",
-        "weight": 0
-      },
-      {
-        "value": "Purple",
-        "weight": 0
-      },
-      {
-        "value": "Orange",
-        "weight": 1
-      }
-    ],
-    "link": "ball.jpg"
-  },
-  {
-    "text": "Guess the emotion of this girl ?",
-    "category": "attentionspan",
-    "type": "image",
-    "options": [
-      {
-        "value": "Sad",
-        "weight": 1
-      },
-      {
-        "value": "Happy",
-        "weight": 0
-      },
-      {
-        "value": "Depressed",
-        "weight": 0
-      },
-      {
-        "value": "Tired",
-        "weight": 0
-      }
-    ],
-    "link": "girl.jpg"
-  },
-  {
-    "text": "Which shape suits the given image?",
-    "category": "attentionspan",
-    "type": "image",
-    "options": [
-      {
-        "value": "a",
-        "weight": 0
-      },
-      {
-        "value": "b",
-        "weight": 0
-      },
-      {
-        "value": "c",
-        "weight": 0
-      },
-      {
-        "value": "d",
-        "weight": 1
-      }
-    ],
-    "link": "imagecock.jpg"
-  },
-  {
-    "text": "Who is this cartoon ?",
-    "category": "attentionspan",
-    "type": "image",
-    "options": [
-      {
-        "value": "Snowman",
+        "value": " Be seeing you, love.",
         "weight": 1
       },
       {
-        "value": "Bheem",
-        "weight": 0
-      },
-      {
-        "value": "Oggy",
-        "weight": 0
-      },
-      {
-        "value": "Sinchan",
+        "value": " Better be seeing you, love.",
         "weight": 0
       }
     ],
-    "link": "pic2.jpg"
-  },
-  {
-    "text": "Which fruit is this ?",
-    "category": "attentionspan",
-    "type": "image",
-    "options": [
-      {
-        "value": "Banana",
-        "weight": 1
-      },
-      {
-        "value": "Apple",
-        "weight": 0
-      },
-      {
-        "value": "Tomato",
-        "weight": 0
-      },
-      {
-        "value": "Kiwi",
-        "weight": 0
-      }
-    ],
-    "link": "Firts.jpg"
-  },
-  {
-    "text": "Whta is the colour of this ball ?",
-    "category": "attentionspan",
-    "type": "image",
-    "options": [
-      {
-        "value": "Red",
-        "weight": 0
-      },
-      {
-        "value": "Blue",
-        "weight": 0
-      },
-      {
-        "value": "Purple",
-        "weight": 0
-      },
-      {
-        "value": "Orange",
-        "weight": 1
-      }
-    ],
-    "link": "ball.jpg"
-  },
-  {
-    "text": "Guess the emotion of this girl ?",
-    "category": "attentionspan",
-    "type": "image",
-    "options": [
-      {
-        "value": "Sad",
-        "weight": 1
-      },
-      {
-        "value": "Happy",
-        "weight": 0
-      },
-      {
-        "value": "Depressed",
-        "weight": 0
-      },
-      {
-        "value": "Tired",
-        "weight": 0
-      }
-    ],
-    "link": "girl.jpg"
-  }
-]
+    "link":"Communication1.mp3"
+    },
+    {
+      "category": "reasoning",
+      "text": "Look at the image",
+      "type": "image",
+      "options": [
+       
+        {
+          "value": "1",
+          "weight": 0
+        },
+        {
+          "value": "2",
+          "weight": 0
+        },
+        {
+          "value": "3",
+          "weight": 1
+        },
+        {
+          "value": "4",
+          "weight": 0
+        },
+        {
+          "value": "5",
+          "weight": 2
+        }
+      ],
+      "link":"reas.png"
+    },
+    {
+      "category": "reasoning",
+      "text": "Look at the image",
+      "type": "image",
+      "options": [
+       
+        {
+          "value": "7",
+          "weight": 2
+        },
+        {
+          "value": "2",
+          "weight": 0
+        },
+        {
+          "value": "3",
+          "weight": 1
+        }
+      ],
+      "link":"Reasoning.png"
+    }
+    ]

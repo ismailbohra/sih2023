@@ -14,7 +14,7 @@ function StudentTest() {
   const [timer, settimer] = useState([]);
 
   useEffect(() => {
-    fetch(`http://172.172.170.251:5000/api/v1/test/getquestion`)
+    fetch(`http://localhost:5000/api/v1/test/getquestion`)
       .then((response) => response.json())
       .then((resp) => {
         setquestions(resp.data);
@@ -65,7 +65,7 @@ function StudentTest() {
       answer: tempanswer,
     };
 
-    fetch("http://172.172.170.251:5000/api/v1/test/insertTestResponse", {
+    fetch("http://localhost:5000/api/v1/test/insertTestResponse", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

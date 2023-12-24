@@ -26,10 +26,10 @@ const RegistrationPage = () => {
     const postData = {
       email: formData.email,
       password: formData.password,
-      role: formData.selectedOption,
+      role: 'teacher',
       username: formData.username,
     };
-    fetch("http://172.172.170.251:5000/api/v1/user/register", {
+    fetch("http://localhost:5000/api/v1/user/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const RegistrationPage = () => {
 
   return (
     <div className="registration-container">
-      <h2 className="res_head">Registration</h2>
+      <h2 className="res_head">Teacher Registration</h2>
       <form onSubmit={handleSubmit} className="registration-form">
         <div className="form-group">
           <label htmlFor="username">Username</label>
@@ -101,7 +101,7 @@ const RegistrationPage = () => {
 
         {/* ... */}
 
-        {/* Radio buttons */}
+        {/* Radio buttons
         <div className="form-group">
           <label>Select the Role:</label>
           <div>
@@ -128,7 +128,7 @@ const RegistrationPage = () => {
               Teacher
             </label>
           </div>
-        </div>
+        </div> */}
 
         {/* Submit button */}
         <button className="submit-btn" type="submit">

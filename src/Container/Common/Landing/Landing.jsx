@@ -39,13 +39,15 @@ export default function Landing() {
                 </nav> */}
               </div>
               <div className="right">
-                <button
+                {/* <button
                   onClick={() => navigateto("login")}
                   className="tbtn nocolor"
                 >
                   Login
-                </button>
-                <button className="tbtn" onClick={() => navigateto("register")}>SignUp</button>
+                </button> */}
+                {/* <button className="tbtn" onClick={() => navigateto("register")}>
+                  SignUp
+                </button> */}
               </div>
             </div>
 
@@ -58,14 +60,14 @@ export default function Landing() {
                     (by <span>R</span>emedy<span>M</span>asters)
                   </h1>
                   <div className="intro_summary">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Est nesciunt unde eligendi, voluptatum culpa quia rem, sit
-                    dicta alias modi labore accusantium itaque voluptas aut,
-                    accusamus fugiat
+                    Empower learning with our innovative app! Tailored for slow
+                    learners, it offers personalized assessments, gamified
+                    engagement, and seamless teacher collaboration to unlock
+                    every student's full potential.
                   </div>
-                  <button
-                    onClick={() => navigateto("login")}
-                    className="tbtn">Get Started</button>
+                  <button onClick={() => navigateto("login")} className="tbtn">
+                    Get Started
+                  </button>
                 </div>
               </div>
 

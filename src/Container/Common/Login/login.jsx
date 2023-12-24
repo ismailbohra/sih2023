@@ -22,7 +22,7 @@ function Login() {
       email: user.username,
       password: user.password,
     };
-    fetch("http://172.172.170.251:5000/api/v1/user/login", {
+    fetch("http://localhost:5000/api/v1/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

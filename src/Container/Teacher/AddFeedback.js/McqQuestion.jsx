@@ -12,7 +12,15 @@ import {
 } from "@mui/material";
 
 function McqQuestion({ question, setanswer, answer }) {
-  const options=['Excellent',"Best","Better","Good","Need Improvment"]
+  console.log(question)
+  let options=[]
+  if (question.type=="rating") {
+    let tempoptions=['Excellent',"Best","Better","Good","Need Improvment"]
+    options = tempoptions.reverse();
+  }else{
+    options=["No" , "Yes"]
+  }
+
   return (
     <>
       <Container>

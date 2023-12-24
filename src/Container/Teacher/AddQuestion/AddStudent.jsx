@@ -25,7 +25,7 @@ const AddStudent = () => {
       role: "student",
       username: formData.username,
     };
-    fetch("http://172.172.170.251:5000/api/v1/user/register", {
+    fetch("http://localhost:5000/api/v1/user/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

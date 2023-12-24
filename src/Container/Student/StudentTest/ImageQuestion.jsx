@@ -17,7 +17,7 @@ import girl from "../../../Assets/photos/girl.jpg";
 import imagecock from "../../../Assets/photos/imagecock.jpg";
 import pic2 from "../../../Assets/photos/pic2.jpg";
 import com from "../../../Assets/photos/Communication.jpeg";
-import math1 from "../../../Assets/photos/Mathematics 1.png";
+import math1 from "../../../Assets/photos/Mathematics1.png";
 import math2 from "../../../Assets/photos/Mathematics2.png";
 import reasoning from "../../../Assets/photos/Reasoning.png";
 import reasoning2 from "../../../Assets/photos/Reasoning2.jpeg";
@@ -47,7 +47,7 @@ function ImageQuestion({ question, setanswer, answer }) {
       case "Communication.jpeg":
         return com;
         break;
-      case "Mathematics 1.png":
+      case "Mathematics1.png":
         return math1;
         break;
       case "Mathematics2.png":
